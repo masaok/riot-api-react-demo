@@ -1,6 +1,7 @@
 import {
   fetchSummoner,
-  fetchChampionMasteriesBySummonerID
+  fetchChampionMasteriesBySummonerID,
+  fetchTotalChampionMasteryBySummonerID
 } from '../common/api'
 
 interface Summoner {
@@ -29,5 +30,24 @@ describe('fetchChampionMasteriesBySummonerID', () => {
     // console.log(masteries)
 
     expect(masteries instanceof Array).toBeTruthy()
+    if (masteries.length > 0) {
+      expect(isNaN(masteries[0].championId)).toBeFalsy()
+      expect(typeof masteries[0].championId === 'number').toBeTruthy()
+      expect(typeof masteries[0].championPoints === 'number').toBeTruthy()
+    }
   })
 })
+
+// https://developer.riotgames.com/apis#champion-mastery-v4/GET_getAllChampionMasteries
+describe('fetchTotalChampionMasteryBySummonerID', () => {
+  it('fetches properly', async () => {
+    const masteryLevel = await fetchTotalChampionMasteryBySummonerID(
+      summoner.id
+    )
+    // console.log(masteryLevel)
+
+    expect(typeof masteryLevel === 'number').toBeTruthy()
+  })
+})
+
+// TODO: Refactor this file into modules that match the Riot API Documentation breakdown

@@ -21,4 +21,18 @@ const fetchChampionMasteriesBySummonerID = async (
   return response.json()
 }
 
-export { fetchSummoner, fetchChampionMasteriesBySummonerID }
+// https://developer.riotgames.com/apis#champion-mastery-v4/GET_getAllChampionMasteries
+const fetchTotalChampionMasteryBySummonerID = async (
+  encryptedSummonerId: string
+) => {
+  const path = `/lol/champion-mastery/v4/scores/by-summoner/${encryptedSummonerId}`
+  const fetchURL = `${BASE_URL}${path}?api_key=${API_KEY}`
+  const response = await fetch(fetchURL)
+  return response.json()
+}
+
+export {
+  fetchSummoner,
+  fetchChampionMasteriesBySummonerID,
+  fetchTotalChampionMasteryBySummonerID
+}
