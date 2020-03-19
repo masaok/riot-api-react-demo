@@ -2,7 +2,7 @@
 
 1. Go here: https://developer.riotgames.com/ and create an API key
 1. Copy .env.sample to .env.local (edit and save)
-1. `source .env.sample`
+1. `source .env.local`
 1. `yarn`
 1. `yarn test`
 
