@@ -1,7 +1,4 @@
 import { fetchSummoner } from '../common/api'
-// const fetch = require('node-fetch')
-
-// const { API_KEY } = process.env
 
 // https://developer.riotgames.com/apis#lol-status-v3/GET_getShardData
 describe('fetchSummoner', () => {
@@ -14,5 +11,3 @@ describe('fetchSummoner', () => {
     expect(summoner.name).toEqual(process.env.SUMMONER_NAME)
   })
 })
-
-// export {}

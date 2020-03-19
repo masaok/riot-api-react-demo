@@ -3,7 +3,12 @@ import {
   fetchChampionMasteriesBySummonerID
 } from '../common/api'
 
-let summoner: { id: string }
+interface Summoner {
+  id: string
+  name: string
+}
+
+let summoner: Summoner
 
 beforeEach(async () => {
   summoner = await fetchSummoner()
@@ -12,11 +17,7 @@ beforeEach(async () => {
 // https://developer.riotgames.com/apis#lol-status-v3/GET_getShardData
 describe('fetchSummoner', () => {
   it('fetches properly', async () => {
-    const summoner = await fetchSummoner()
-    // console.log(summoner)
-
-    const summonerId = summoner.id
-    expect(typeof summonerId).toBe('string')
+    expect(typeof summoner.id).toBe('string')
     expect(summoner.name).toEqual(process.env.SUMMONER_NAME)
   })
 })
