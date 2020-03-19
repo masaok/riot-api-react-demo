@@ -6,6 +6,54 @@
 1. `yarn`
 1. `yarn test`
 
+## TODO
+
+- Refactor to match Riot API Documentation
+- Create pages to demo all API capabilities
+      
+### Get All Ranked Queue info for a given Summoner
+
+https://developer.riotgames.com/apis#league-v4/GET_getLeagueEntriesForSummoner
+
+```
+[
+    {
+        "queueType": "RANKED_SOLO_5x5",
+        "summonerName": "asdf",
+        "hotStreak": false,
+        "wins": 101,
+        "veteran": false,
+        "losses": 95,
+        "rank": "II",
+        "tier": "BRONZE",
+        "inactive": false,
+        "freshBlood": false,
+        "leagueId": "fe4e1a5c-104c-451e-b9d5-4efe2b308e1d",
+        "leaguePoints": 0
+    },
+    {
+        "queueType": "RANKED_FLEX_SR",
+        "summonerName": "asdf",
+        "hotStreak": false,
+        "miniSeries": {
+            "wins": 1,
+            "losses": 0,
+            "target": 2,
+            "progress": "WNN"
+        },
+        "wins": 21,
+        "veteran": false,
+        "losses": 28,
+        "rank": "IV",
+        "tier": "BRONZE",
+        "inactive": false,
+        "freshBlood": false,
+        "leagueId": "3a48eef8-0f3f-4ffc-b83e-6d3cd107726f",
+        "leaguePoints": 100
+    }
+]
+```
+
 ## Boilerplate Stuff
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
