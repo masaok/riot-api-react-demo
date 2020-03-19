@@ -1,3 +1,13 @@
+## Quickstart
+
+1. Go here: https://developer.riotgames.com/ and create an API key
+1. Copy .env.sample to .env.local (edit and save)
+1. `source .env.sample`
+1. `yarn`
+1. `yarn test`
+
+## Boilerplate Stuff
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
